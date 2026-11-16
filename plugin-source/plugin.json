@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dev-b705a0defae081919ad91ad9ce9972bd",
+  "version": "1.0.1",
+  "description": "Laboratorio de técnicas mediante gestos reales con procesamiento local de webcam.",
+  "author": {
+    "name": "App developer"
+  },
+  "extensions": {
+    "com.openai": {
+      "apps": "./.app.json",
+      "interface": {
+        "capabilities": [],
+        "category": "Other",
+        "defaultPrompt": null,
+        "developerName": "App developer",
+        "displayName": "Jujutsu Gesture Lab",
+        "longDescription": "Laboratorio de técnicas mediante gestos reales con procesamiento local de webcam.",
+        "shortDescription": "Laboratorio de técnicas mediante gestos reales con procesamiento local de webcam.",
+        "websiteURL": "https://jujutsu-gesture-lab-alfredo.sparklinglily8.chatgpt.site"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+JUJUTSU GESTURE LAB — Diseño y estado v0.1
+
+1. Experiencia
+Espejo de webcam con efectos 2D. No implementa realidad aumentada con anclaje espacial ni comprensión de la habitación. El reconocimiento sucede en un Worker del navegador. No hay grabación, telemetría de imágenes ni subida de vídeo. Se descargan el motor, WASM y modelo desde jsDelivr/Google; esta entrega requiere conexión inicial y no garantiza funcionamiento offline. Las fuentes tipográficas también se descargan. Los archivos que el usuario selecciona se leen mediante URL de objeto local y desaparecen al cerrar la sesión; la configuración exportada conserva nombres, nunca acceso persistente al disco.
+
+2. Ejemplo completo
+Seleccionar Gojo y Azul → cargar un clip propio → verlo con controles → al terminar, si la cámara está lista, cuenta atrás y práctica. También se puede saltar el clip e iniciar práctica con la guía. La referencia ocupa el escenario únicamente fuera del reconocimiento. En la práctica permanecen visibles cámara y guía lateral. Mantener índice y corazón extendidos y anular y meñique flexionados 1,2 s. Al alcanzar el umbral, esfera azul en el centro de la mano y sonido. Recuperación 2,2 s. Abrir la mano durante 0,5 s con seguimiento válido antes de rearmar. Repetir o volver a la referencia.
+
+3. Tecnología y compatibilidad
+Web: MediaPipe Tasks Vision 0.10.22-rc.20250304 fijado para reproducibilidad, Hand Landmarker, Worker de módulo con CPU, Canvas 2D, getUserMedia y vídeo HTML. No se afirma que esa versión sea la más reciente. Objetivo: Chrome de escritorio moderno con webcam. Safari/Firefox figuran en el ejemplo oficial, pero esta combinación concreta con Worker requiere validación en cada navegador. Errores de modelo, cámara o formato se muestran. HTTPS o localhost y permiso de cámara obligatorios. El MVP solicita hasta 960×720 y limita los envíos a 20 fps, con un único fotograma en vuelo. No promete esa velocidad en todos los equipos.
+Escritorio: un envoltorio posterior facilita distribuir modelos y recursos y usar archivos sin conexión, pero añade instaladores y mantenimiento. No es necesario para validar un gesto. No se implementa WebXR.
+Fuentes oficiales consultadas el 16/11/2026:
+https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/web_js
+https://github.com/google-ai-edge/mediapipe-samples/blob/main/examples/hand_landmarker/js/README.md
+https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+
+4. Catálogo candidato
+TODOS los gestos siguientes son adaptaciones jugables. No se han verificado sellos concretos del anime; los clips del usuario servirán para contrastarlos y registrar episodio/tiempo/fuente. Un nombre de técnica no demuestra la fidelidad de la postura propuesta.
+Gojo / Azul / azul-blanco / dos dedos extendidos y dos flexionados / 1 mano / esfera y pulso grave / dificultad baja-media / MVP implementado en código.
+Gojo / Rojo / rojo-blanco / índice y avance / 1 mano / onda e impacto / media: profundidad ambigua / futuro.
+Gojo / Púrpura / violeta / acercar palmas desde posiciones separadas / 2 manos / convergencia y proyectil / media-alta: oclusión / futuro.
+Sukuna / Corte / negro-rojo / barrido de palma / 1 mano / cortes de pantalla y golpe seco / media: trayectoria / futuro.
+Megumi / Sombras / índigo / aproximar manos abiertas / 2 manos / siluetas y humo / alta: entrelazado y oclusiones / futuro.
+Yuji / Impacto / rojo-negro / abrir y cerrar puño / 1 mano / anillo y golpe / media: no identifica contacto ni puñetazo real / futuro.
+Cada ficha tendrá video y audio propios. Inicialmente son null: no hay episodios descargados ni archivos inventados.
+
+5. Reconocimiento
+21 puntos por mano. Se evalúan ángulos 2D en articulaciones PIP y DIP, en coordenadas de píxel para corregir la relación de aspecto. Índice y corazón: PIP y DIP >150°. Anular y meñique: PIP <135°. El pulgar es libre. Separación entre puntas dividida por longitud muñeca-base del corazón: entre 0,12 y 1,5. Tolerancias iniciales, no universales: deben calibrarse con pruebas humanas.
+Se rechazan puntos fuera del margen del encuadre, palma menor de 55 píxeles y relación ancho/longitud de palma menor de 0,3. Esto limita posturas de perfil; no prueba orientación 3D. Media exponencial de puntos con peso 0,6 para la observación nueva. El gesto debe ser válido tanto en puntos crudos como suavizados. Salto de muñeca >25% de la imagen reinicia la carga y el suavizado; no constituye identificación de persona.
+Tiempo real monotónico; máximo 100 ms acreditados por muestra. Una detección aislada no activa. Una postura visible incorrecta reinicia. Una pérdida de seguimiento pausa sin acumular hasta 250 ms; después reinicia. No se arrastra el tiempo de una pestaña oculta. La activación necesita soltar con seguimiento válido; una mano ausente no cuenta como liberación.
+No se interpreta handedness para esta técnica: funciona con cualquiera de las manos y no depende de etiquetas izquierda/derecha. La cámara se refleja al mostrarla y el dibujo invierte x una vez; inferencia sobre imagen sin reflejar. Ambas superficies comparten proporción, sin recorte cover.
+Con una cámara, z estimada no es distancia métrica. No se puede garantizar contacto, dedos cruzados, orden de dedos en oclusiones ni orientación real. Dedos ocultos pueden producir puntos inferidos plausibles; no hay confianza por articulación expuesta aquí. No se deben mostrar correcciones de contacto ni certificar posturas ocultas. Se pide palma visible, luz frontal difusa y contraste. No se exige forzar articulaciones.
+Futuro: distancia entre manos normalizada por tamaño de palmas, vectores muñeca-dedo para orientación 2D y centros en regiones de imagen. Movimiento: historial de posiciones y velocidades normalizadas. Secuencias: máquina de estados con orden, ventana temporal y reinicio al incumplir. Asociar manos por continuidad e identidad antes de suavizarlas; no mezclar el índice del resultado entre manos.
+Depuración: esqueleto, ángulos, separación, tamaño de palma, estado y progreso; exportación/importación validada de umbrales y tiempos. Probar efecto es una función marcada de depuración y no puntúa reconocimiento.
+
+6. Efectos y accesibilidad
+Preparación: esfera y partículas cuya intensidad aumenta con la carga. Activación: esfera, órbitas y onda centradas en landmark 9, sonido propio o tono sintetizado. Al perder mano se oculta el efecto real; una prueba de depuración puede usar centro de pantalla. El efecto no se dibuja detrás del cuerpo ni se ancla al mundo. MVP sin segmentación: halos frontales y ondas. Futuro con segmentación: capas tras la silueta. Futuro espacial: WebXR/SLAM con plataformas y dispositivos compatibles, como proyecto separado.
+Volumen e intensidad ajustables. Reducir destellos viene activado y elimina el flash de pantalla; no se usa estroboscopia. Al terminar se desvanece durante 1,8 s. Reconocimiento y dibujo se mantienen separados.
+
+7. Arquitectura
+Cámara (MediaStream, sin audio) → ImageBitmap → Worker de seguimiento → puntos → validación geométrica → GestureGate → eventos de efecto y sonido.
+Interfaz controla selección, tutorial, clip y cuenta atrás. Canvas dibuja sobre vídeo espejo. config.json separa personaje, técnica, instrucciones, gesto, tiempos y efecto. app.js orquesta estos módulos en esta primera entrega; en próximas fases se extraerán CameraController, ResourceManager y EffectEngine a archivos propios.
+Servidor Worker Cloudflare: entrega archivos y herramientas MCP de solo lectura get_project_plan y get_technique_config. El servidor no recibe fotogramas ni puede encender la webcam desde el chat. La cámara requiere abrir la aplicación y autorizarla allí.
+
+8. Fases y criterios observables
+Fase 1, tutorial: elegir personaje/técnica; reproducir clip local si existe; saltarlo sin bloqueo; cámara visible durante práctica; aviso ante clip incompatible.
+Fase 2, seguimiento: puntos siguen la mano en espejo; mano ausente no carga; puño y palma abierta no activan; dos dedos correctos mantienen carga. Probar al menos cinco personas, dos iluminaciones y ambas manos. Estos ensayos humanos están pendientes.
+Fase 3, activación: 1 fotograma no dispara; mantener 1,2 s activa una sola vez; postura mantenida no repite; pérdida >250 ms reinicia; abrir 0,5 s tras recuperación permite repetir. Pruebas automatizadas de máquina de estados y geometría con datos sintéticos, más ensayo real pendiente.
+Fase 4, rendimiento: medir fps de inferencia y fluidez del dibujo en un PC con webcam. Objetivo orientativo: 15–20 inferencias/s a 960×720, sin cola creciente. No se ha medido en el equipo del usuario.
+Fase 5, catálogo: reconocer dos manos con asociación estable, clips por técnica, modo libre con selección explícita para evitar colisiones y desafío con secuencias temporizadas. Aún no implementados.
+
+9. Estado y pasos de comprobación
+Código del MVP y herramientas MCP implementados. Recursos del anime no incluidos. Los tests sintéticos prueban reglas y estados, no precisión sobre manos reales. Para validar: abrir aplicación en Chrome, autorizar webcam, cargar vídeo opcional, practicar, abrir depuración, comprobar que el puño no carga y que el gesto adaptado activa una vez. Abrir mano y repetir. Probar bloqueo de permiso, apagar cámara y cambiar de pestaña. No declarar esta entrega calibrada hasta completar esos ensayos.
