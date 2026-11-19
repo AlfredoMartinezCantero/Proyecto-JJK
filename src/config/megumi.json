@@ -1,0 +1,282 @@
+{
+  "version": 2,
+  "techniques": [
+    {
+      "key": "divine-dogs",
+      "id": "divine-dogs-adapted",
+      "name": "Perros Divinos",
+      "title": "Perros Divinos: Gyokuken",
+      "subtitle": "DOS SOMBRAS, UNA PRESA",
+      "color": "#a5b5ed",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Invoca a los perros blanco y negro desde la sombra. Rodean a la maldición y atacan por ambos lados.",
+      "instructions": [
+        "En ambas manos extiende índice y meñique; flexiona corazón y anular. Pulgar cómodo.",
+        "Acerca las palmas a una altura parecida, dejando espacio entre ellas y sin superponerlas.",
+        "Mantén ambas manos visibles 1,2 s. Es una adaptación jugable del sello de sombra."
+      ],
+      "timing": {
+        "holdMs": 1200,
+        "lostGraceMs": 250,
+        "cooldownMs": 5100,
+        "releaseMs": 600
+      },
+      "effectMs": 4600,
+      "steps": [
+        {
+          "pose": "hounds",
+          "label": "Invocar a los perros",
+          "instruction": "Índice y meñique extendidos en ambas manos; palmas próximas sin contacto. Mantén 1,2 s.",
+          "holdMs": 1200
+        }
+      ]
+    },
+    {
+      "key": "nue",
+      "id": "nue-adapted",
+      "name": "Nue",
+      "title": "Nue: alas de trueno",
+      "subtitle": "SHIKIGAMI ELÉCTRICO",
+      "color": "#d2a5ff",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Una sombra alada asciende y se lanza sobre el objetivo con una descarga eléctrica que lo derriba.",
+      "instructions": [
+        "Muestra las dos palmas abiertas, próximas y a una altura parecida, sin tocarlas. Mantén 0,7 s.",
+        "Separa ambas manos abiertas hacia los lados, manteniéndolas dentro del encuadre.",
+        "Conserva la separación durante 1 s para desplegar las alas de Nue. No necesitas cruzar las muñecas."
+      ],
+      "timing": {
+        "holdMs": 1000,
+        "lostGraceMs": 250,
+        "cooldownMs": 5000,
+        "releaseMs": 600
+      },
+      "effectMs": 4500,
+      "steps": [
+        {
+          "pose": "nue-gather",
+          "label": "Reunir la sombra",
+          "instruction": "Dos palmas abiertas próximas, sin contacto ni superposición. Mantén 0,7 s.",
+          "holdMs": 700
+        },
+        {
+          "pose": "nue-spread",
+          "label": "Desplegar las alas",
+          "instruction": "Separa ambas palmas abiertas hacia los lados y mantén 1 s. Conserva ambas manos visibles.",
+          "holdMs": 1000
+        }
+      ]
+    },
+    {
+      "key": "totality",
+      "id": "totality-adapted",
+      "name": "Lobos de Jade: Totalidad",
+      "title": "Lobos de Jade: Totalidad",
+      "subtitle": "EL CAZADOR DE GARRAS",
+      "color": "#b7c6e2",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Un lobo bípedo de gran tamaño emerge de la sombra y desgarra al objetivo con dos zarpazos.",
+      "instructions": [
+        "Índice y meñique extendidos en ambas manos próximas. Mantén 1,3 s.",
+        "Separa ambos sellos sin cambiar de manos y mantén 0,8 s.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 800,
+        "lostGraceMs": 250,
+        "cooldownMs": 5300,
+        "releaseMs": 600
+      },
+      "effectMs": 4800,
+      "steps": [
+        {
+          "pose": "totality-gather",
+          "label": "Reunir al cazador",
+          "instruction": "Índice y meñique extendidos en ambas manos próximas. Mantén 1,3 s.",
+          "holdMs": 1300
+        },
+        {
+          "pose": "totality-release",
+          "label": "Liberar Totalidad",
+          "instruction": "Separa ambos sellos sin cambiar de manos y mantén 0,8 s.",
+          "holdMs": 800
+        }
+      ]
+    },
+    {
+      "key": "toad",
+      "id": "toad-adapted",
+      "name": "Sapo",
+      "title": "Sapo: Gama",
+      "subtitle": "LENGUA DE CAPTURA",
+      "color": "#a6d68f",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Un sapo captura a la maldición con su lengua, la arrastra y la deja derribada.",
+      "instructions": [
+        "Dos dedos en una mano y palma abierta en la otra, próximas sin contacto. Mantén 1,3 s.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 1300,
+        "lostGraceMs": 250,
+        "cooldownMs": 4800,
+        "releaseMs": 600
+      },
+      "effectMs": 4300,
+      "steps": [
+        {
+          "pose": "toad-sign",
+          "label": "Invocar a Sapo",
+          "instruction": "Dos dedos en una mano y palma abierta en la otra, próximas sin contacto. Mantén 1,3 s.",
+          "holdMs": 1300
+        }
+      ]
+    },
+    {
+      "key": "max-elephant",
+      "id": "max-elephant-adapted",
+      "name": "Elefante Máximo",
+      "title": "Elefante Máximo: Banshō",
+      "subtitle": "TORRENTE DE AGUA",
+      "color": "#91d3e5",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Un elefante de gran tamaño proyecta agua por la trompa y arrastra al objetivo.",
+      "instructions": [
+        "Dos palmas abiertas próximas, sin contacto. Mantén 0,8 s.",
+        "Separa las manos: puño en una y palma abierta en la otra. Mantén 1 s.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 1000,
+        "lostGraceMs": 250,
+        "cooldownMs": 6100,
+        "releaseMs": 600
+      },
+      "effectMs": 5600,
+      "steps": [
+        {
+          "pose": "elephant-gather",
+          "label": "Reunir el caudal",
+          "instruction": "Dos palmas abiertas próximas, sin contacto. Mantén 0,8 s.",
+          "holdMs": 800
+        },
+        {
+          "pose": "elephant-release",
+          "label": "Proyectar el torrente",
+          "instruction": "Separa las manos: puño en una y palma abierta en la otra. Mantén 1 s.",
+          "holdMs": 1000
+        }
+      ]
+    },
+    {
+      "key": "rabbit-escape",
+      "id": "rabbit-escape-adapted",
+      "name": "Estampida de Conejos",
+      "title": "Estampida de Conejos: Datto",
+      "subtitle": "CORTINA DE DISTRACCIÓN",
+      "color": "#dce1e4",
+      "handCount": 2,
+      "difficulty": "Intermedia",
+      "tutorialGoal": 2,
+      "description": "Una multitud de conejos blancos invade el campo y distrae a la maldición sin causarle heridas.",
+      "instructions": [
+        "Índice y corazón extendidos en ambas manos próximas, pulgares cómodos. Mantén 1,1 s.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 1100,
+        "lostGraceMs": 250,
+        "cooldownMs": 4800,
+        "releaseMs": 600
+      },
+      "effectMs": 4300,
+      "steps": [
+        {
+          "pose": "rabbit-sign",
+          "label": "Liberar la estampida",
+          "instruction": "Índice y corazón extendidos en ambas manos próximas, pulgares cómodos. Mantén 1,1 s.",
+          "holdMs": 1100
+        }
+      ]
+    },
+    {
+      "key": "mahoraga",
+      "id": "mahoraga-adapted",
+      "name": "Mahoraga",
+      "title": "Mahoraga: ritual de invocación",
+      "subtitle": "GENERAL DIVINO",
+      "color": "#dbd7a9",
+      "handCount": 2,
+      "difficulty": "Avanzada",
+      "tutorialGoal": 1,
+      "description": "Representa el ritual de Mahoraga: un gigante con rueda de ocho radios alcanza al objetivo con su espada.",
+      "instructions": [
+        "Dos puños cómodos, separados y visibles a la misma altura. Mantén 2,2 s; sin superponer las manos.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 2200,
+        "lostGraceMs": 250,
+        "cooldownMs": 7300,
+        "releaseMs": 600
+      },
+      "effectMs": 6800,
+      "steps": [
+        {
+          "pose": "ritual",
+          "label": "Completar el ritual",
+          "instruction": "Dos puños cómodos, separados y visibles a la misma altura. Mantén 2,2 s; sin superponer las manos.",
+          "holdMs": 2200
+        }
+      ]
+    },
+    {
+      "key": "chimera-garden",
+      "id": "chimera-garden-adapted",
+      "name": "Jardín Azabache de las Quimeras",
+      "title": "Jardín Azabache de las Quimeras",
+      "subtitle": "EXPANSIÓN DE DOMINIO",
+      "color": "#9992d8",
+      "handCount": 2,
+      "difficulty": "Avanzada",
+      "tutorialGoal": 1,
+      "description": "Extiende un jardín de sombras fluidas, dobles y shikigamis que acaba engullendo al objetivo.",
+      "instructions": [
+        "Dos puños cómodos próximos, sin contacto. Mantén 1,7 s.",
+        "Abre y separa ambas palmas, manteniéndolas visibles durante 1,2 s.",
+        "Adaptación para webcam: conserva ambas manos visibles, sin entrelazar dedos ni forzar la postura."
+      ],
+      "timing": {
+        "holdMs": 1200,
+        "lostGraceMs": 250,
+        "cooldownMs": 9000,
+        "releaseMs": 600
+      },
+      "effectMs": 8500,
+      "steps": [
+        {
+          "pose": "chimera-gather",
+          "label": "Concentrar las sombras",
+          "instruction": "Dos puños cómodos próximos, sin contacto. Mantén 1,7 s.",
+          "holdMs": 1700
+        },
+        {
+          "pose": "chimera-release",
+          "label": "Expandir el jardín",
+          "instruction": "Abre y separa ambas palmas, manteniéndolas visibles durante 1,2 s.",
+          "holdMs": 1200
+        }
+      ]
+    }
+  ]
+}

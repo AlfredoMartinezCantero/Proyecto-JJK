@@ -1,0 +1,22 @@
+# Manos del jugador por personaje
+
+Las dos manos controladas por webcam cambian con el personaje de la técnica seleccionada, en menú/guía y en todas sus técnicas. Cada personaje tiene una geometría completa propia, desde la muñeca hasta las puntas. `HandRig.setCharacter` construye cada anatomía la primera vez y después reutiliza esa variante sobre los mismos 21 huesos. No cambia los landmarks, las posturas válidas, las asignaciones de Azul/Rojo ni los puntos desde los que salen los efectos.
+
+| Personaje | Apariencia |
+| --- | --- |
+| Gojo | Palma curva con almohadilla del pulgar, dedos suaves y redondeados, pliegues palmares/articulares, uñas naturales y puño oscuro |
+| Sukuna | Palma más estrecha y angulosa, nudillos prominentes, dedos más afilados, tendones en relieve, garras negras curvas, dos bandas de muñeca y manga clara |
+| Yuji | Palma y falanges más robustas, nudillos/tendones moderados, uñas naturales y manga azul oscura con borde rojo |
+| Megumi | Palma más estrecha, dedos finos, nudillos/tendones suaves, uñas naturales y puños azul oscuro |
+
+Las dos imágenes aportadas por el usuario el 17/11/2026 orientan esta revisión de la anatomía completa: mano natural de Gojo y dorso de Sukuna con tendones, uñas largas y bandas negras. Son interpretaciones geométricas originales. Como referencias previas se consultaron el [diseño oficial de Sukuna](https://jujutsukaisen.jp/images/chara_category4/chara_detail99.png), el [fotograma oficial 40-2](https://jujutsukaisen.jp/images/episodes/40-2.jpg) y la [ficha de Gojo](https://jujutsukaisen.jp/character/shibuyajihen.php). Ninguna imagen se incluye como textura o recurso publicado.
+
+`anatomicalHand.ts` construye una superficie implícita de palma, eminencias tenar/hipotenar, espacios interdigitales, nudillos y falanges. La triangulación comparte vértices en toda la piel; la muñeca también está cerrada. Dos pasadas de suavizado conservan el volumen. Los tendones desplazan la superficie dorsal y el color por vértice marca pliegues y articulaciones. Cada anatomía tiene contorno de tinta deformable y material toon opaco con profundidad.
+
+`HandRig` calcula orientación de palma, giro de cada falange y estiramiento longitudinal a partir de los puntos observados. Las matrices mantienen exactamente la posición mundial de cada hueso, incluso con proporciones diferentes a la mano de reposo. Los pesos de los dedos solo influyen en su región: cambiar de dedo más próximo en medio de la palma no arruga ni invierte su superficie. La escala general depende de la longitud de palma observada.
+
+`CharacterHandDetails` orienta muñeca/manga con los puntos 0, 5, 9 y 17; las uñas siguen el giro de la falange distal. Las uñas naturales tienen volumen curvo y las garras son cuerpos cerrados con punta y curvatura. Las mangas y el antebrazo son una prolongación visual estimada desde la palma, no un seguimiento de codos ni de distancia física. La etiqueta izquierda/derecha refleja la anatomía y su dorso, siguiendo la [convención de imagen espejo de MediaPipe](https://chuoling.github.io/mediapipe/solutions/hands.html#multi_handedness); se compensa la reflexión en los puntos locales para conservar las coordenadas observadas. No decide reconocimiento ni identidad. Su orientación real debe contrastarse en webcam, especialmente en oclusiones.
+
+Las uñas usan instancias reutilizadas y los accesorios cuelgan de la mano: desaparecen con ella cuando se pierde seguimiento. La primera selección construye la variante; los cambios siguientes reutilizan su geometría. Cambiar de personaje no crea nuevos esqueletos. Los prototipos geométricos se almacenan en CPU y cada rig recibe sus propias copias. El cierre libera también las variantes inactivas y libera una sola vez el esqueleto compartido entre piel y contorno.
+
+Dieciséis casos en `hand-appearance.test.ts` y `hand-anatomy.test.ts` cubren alternancia de geometrías, actualización de ambas manos en las diecinueve técnicas, anclas exactas y entrada intacta para izquierda/derecha, matrices finitas, palma degenerada y ocultación conjunta. Comprueban además una sola superficie conectada, cada arista compartida por dos caras, pesos válidos, giro rígido sin pérdida de volumen, posturas flexionadas y ausencia de inversión de la palma con otras proporciones. Se inspeccionaron proyecciones estáticas en CPU del dorso, la palma y dedos flexionados; no equivalen a una captura WebGL ni a un ensayo de manos reales. Queda revisar en navegador iluminación, oclusión, giro de las uñas y rendimiento.

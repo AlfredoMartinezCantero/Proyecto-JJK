@@ -1,0 +1,54 @@
+{
+  "version": 3,
+  "techniques": [
+    {
+      "key": "blue", "id": "blue-adapted", "name": "Azul", "title": "Convergencia: Azul", "subtitle": "ATRACCIÓN",
+      "color": "#a5e4ef", "handCount": 1, "difficulty": "Inicial", "tutorialGoal": 3,
+      "description": "Concentra una esfera azul y atrae al objetivo de entrenamiento.",
+      "instructions": ["Palma visible hacia la cámara.", "Extiende índice y corazón.", "Flexiona anular y meñique. Pulgar libre."],
+      "timing": { "holdMs": 1200, "lostGraceMs": 250, "cooldownMs": 2200, "releaseMs": 500 }, "effectMs": 1800,
+      "steps": [{ "pose": "blue", "label": "Concentrar Azul", "instruction": "Extiende índice y corazón; flexiona anular y meñique.", "holdMs": 1200 }]
+    },
+    {
+      "key": "red", "id": "red-adapted", "name": "Rojo", "title": "Reversión: Rojo", "subtitle": "REPULSIÓN",
+      "color": "#ffb2af", "handCount": 1, "difficulty": "Inicial", "tutorialGoal": 3,
+      "description": "Acumula energía roja y libera una onda de repulsión que hace estallar al objetivo en fragmentos.",
+      "instructions": ["Palma visible hacia la cámara.", "Extiende solo el índice.", "Flexiona corazón, anular y meñique. Pulgar libre."],
+      "timing": { "holdMs": 1000, "lostGraceMs": 250, "cooldownMs": 2600, "releaseMs": 500 }, "effectMs": 2200,
+      "steps": [{ "pose": "red", "label": "Concentrar Rojo", "instruction": "Extiende el índice y flexiona los otros tres dedos.", "holdMs": 1000 }]
+    },
+    {
+      "key": "fusion", "id": "fusion-adapted", "name": "Fusión", "title": "Fusión: Azul + Rojo", "subtitle": "PREPARACIÓN DE PÚRPURA",
+      "color": "#d2baff", "handCount": 2, "difficulty": "Intermedia", "tutorialGoal": 2,
+      "description": "Aprende a formar las dos energías y acercarlas sin ocultar las manos.",
+      "instructions": ["Primero crea solo Azul con índice y corazón; mantén 3,2 s mientras suena su audio.", "Conserva Azul y crea Rojo con el índice de la otra mano, separados; mantén 2,8 s.", "Después acerca las palmas sin tocarlas ni superponerlas para fusionar."],
+      "timing": { "holdMs": 900, "lostGraceMs": 250, "cooldownMs": 3800, "releaseMs": 600 }, "effectMs": 3400,
+      "steps": [
+        { "pose": "prepare-blue", "label": "Castear Azul", "instruction": "Solo Azul con dos dedos en una mano; todavía no formes Rojo. Mantén 3,2 s.", "holdMs": 3200 },
+        { "pose": "prepare-red", "label": "Castear Rojo", "instruction": "Conserva Azul y crea Rojo en la otra mano, con las palmas separadas. Mantén 2,8 s.", "holdMs": 2800 },
+        { "pose": "merge", "label": "Unir las energías", "instruction": "Conserva ambos gestos y acerca las palmas dejando espacio entre ellas.", "holdMs": 900 }
+      ]
+    },
+    {
+      "key": "purple", "id": "purple-adapted", "name": "Púrpura", "title": "Técnica hueca: Púrpura", "subtitle": "FUSIÓN Y PROYECCIÓN",
+      "color": "#cfb1ff", "handCount": 2, "difficulty": "Avanzada", "tutorialGoal": 2,
+      "description": "Completa la fusión y cambia al gesto final para proyectar Púrpura.",
+      "instructions": ["Primero crea solo Azul con índice y corazón y mantén 3,2 s.", "Conserva esa mano y crea Rojo en la otra, separados, durante 2,8 s.", "Acerca ambas manos para fusionar; después proyecta con la mano original de Azul."],
+      "timing": { "holdMs": 1000, "lostGraceMs": 250, "cooldownMs": 4600, "releaseMs": 600 }, "effectMs": 4200,
+      "steps": [
+        { "pose": "prepare-blue", "label": "Castear Azul", "instruction": "Empieza solo con Azul: índice y corazón. Todavía no prepares Rojo. Mantén 3,2 s.", "holdMs": 3200 },
+        { "pose": "prepare-red", "label": "Castear Rojo", "instruction": "Conserva Azul y crea Rojo en la otra mano, separados. Mantén 2,8 s.", "holdMs": 2800 },
+        { "pose": "merge", "label": "Fusionar", "instruction": "Acerca las palmas sin superponerlas y conserva los dos gestos.", "holdMs": 900 },
+        { "pose": "purple", "label": "Proyectar Púrpura", "instruction": "En la mano de Azul, extiende índice, corazón y anular; flexiona meñique.", "holdMs": 1000 }
+      ]
+    },
+    {
+      "key": "domain", "id": "domain-adapted", "name": "Dominio", "title": "Expansión de dominio", "subtitle": "VACÍO INFINITO",
+      "color": "#d4dcff", "handCount": 1, "difficulty": "Intermedia", "tutorialGoal": 1,
+      "description": "Despliega el vacío estelar e inmoviliza a la maldición. Su cabeza estalla cuando quedan 2 segundos de dominio.",
+      "instructions": ["Palma visible; índice y corazón extendidos.", "Acerca los dos dedos cómodamente, sin exigir que se crucen.", "Flexiona anular y meñique y mantén la postura."],
+      "timing": { "holdMs": 1800, "lostGraceMs": 250, "cooldownMs": 8500, "releaseMs": 600 }, "effectMs": 8000,
+      "steps": [{ "pose": "domain", "label": "Desplegar el dominio", "instruction": "Índice y corazón próximos y extendidos; anular y meñique flexionados.", "holdMs": 1800 }]
+    }
+  ]
+}

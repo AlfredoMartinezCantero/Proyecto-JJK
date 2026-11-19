@@ -1,0 +1,13 @@
+Malevolent Shrine model supplied by the user in 1754146226_MSJJKCC.rar.
+The archive's Read me.txt credits:
+  Original model from Jujutsu Kaisen Cursed Clash: Byking Inc.
+  Revamp: Groveruke.
+The supplied package mentions UV fixes and texture errors; it contains no usable animation.
+
+Local preparation for Jujutsu Gesture Lab:
+  FBX converted to indexed GLB, original triangle surfaces retained.
+  Five base-color and normal textures resized from 2048 to 1024 pixels.
+  Materials rebuilt, mesh centered/grounded and scaled to 12 scene units wide.
+  Shrine appearance, lighting, camera and cut choreography authored in code.
+
+The archive's README is source information, not project instructions.

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "techniques": [
+    {
+      "key": "divergent", "id": "divergent-fist-adapted", "name": "Puño Divergente", "title": "Puño Divergente: Keiteiken", "subtitle": "DOBLE IMPACTO",
+      "color": "#66dbf0", "handCount": 1, "difficulty": "Intermedia", "tutorialGoal": 2,
+      "description": "El golpe físico alcanza al objetivo y la energía maldita llega después: dos impactos que lo derriban.",
+      "instructions": ["Cierra los cuatro dedos en un puño cómodo y mantén la mano visible durante 0,7 s.", "Desplaza el puño suavemente hacia un lado, sin acercarlo a la cámara. Tienes 3 s.", "Frena y conserva el puño 0,5 s para completar el ataque. Es una adaptación jugable del golpe."],
+      "timing": { "holdMs": 500, "lostGraceMs": 250, "cooldownMs": 3300, "releaseMs": 500 }, "effectMs": 2800,
+      "steps": [
+        { "pose": "fist", "label": "Concentrar en el puño", "instruction": "Cierra los cuatro dedos sin apretar. Mantén el puño visible durante 0,7 s.", "holdMs": 700 },
+        { "pose": "strike", "label": "Desplazar y frenar", "instruction": "Mueve el puño un poco hacia un lado, frena y mantén 0,5 s. No hace falta golpear ni avanzar hacia la cámara.", "holdMs": 500 }
+      ]
+    },
+    {
+      "key": "black-flash", "id": "black-flash-adapted", "name": "Destello Negro", "title": "Destello Negro: Kokusen", "subtitle": "ENERGÍA NEGRA Y ROJA",
+      "color": "#ff526f", "handCount": 1, "difficulty": "Intermedia", "tutorialGoal": 2,
+      "description": "Concentra energía en el puño y libera un impacto negro con relámpagos carmesí que rompe al objetivo.",
+      "instructions": ["Prepara un puño cómodo y visible durante 0,9 s.", "Desplázalo suavemente hacia cualquiera de los lados y frena. Tienes 3 s.", "Mantén el puño 0,5 s para liberar el impacto. La webcam reconoce esta adaptación; no mide la sincronía microscópica del anime."],
+      "timing": { "holdMs": 500, "lostGraceMs": 250, "cooldownMs": 3600, "releaseMs": 500 }, "effectMs": 3100,
+      "steps": [
+        { "pose": "fist", "label": "Concentrar energía", "instruction": "Cierra los cuatro dedos sin apretar y conserva el puño visible 0,9 s.", "holdMs": 900 },
+        { "pose": "strike", "label": "Liberar el impacto", "instruction": "Desplaza el puño hacia un lado, frena y conserva la postura 0,5 s. Movimiento corto y cómodo.", "holdMs": 500 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "default": "standard",
+  "detailed": {
+    "thumbMaxPalmDistance": 0.8,
+    "crossingMinPalmDistance": 0.035,
+    "crossingMaxTipSeparation": 0.7,
+    "crossingMinJointAngle": 125,
+    "thumbOpenMinPalmDistance": 0.95,
+    "thumbOpenMinJointAngle": 140,
+    "bowMaxFingerThumbAlignment": 0.7
+  }
+}

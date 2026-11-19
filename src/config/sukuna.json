@@ -1,0 +1,46 @@
+{
+  "version": 4,
+  "techniques": [
+    {
+      "key": "dismantle", "id": "dismantle-adapted", "name": "Desmantelar", "title": "Desmantelar: Dismantle", "subtitle": "CORTE PROYECTADO",
+      "color": "#ffa6a7", "handCount": 1, "difficulty": "Intermedia", "tutorialGoal": 2,
+      "description": "Prepara un filo y traza un barrido lateral que divide la maldición en dos mitades.",
+      "instructions": ["Extiende solo el índice, con la palma visible, hasta completar la preparación.", "Dibuja un trazo lateral corto con la punta del índice, hacia cualquiera de los dos lados.", "Frena suavemente al terminar y conserva el índice extendido un instante."],
+      "timing": { "holdMs": 500, "lostGraceMs": 250, "cooldownMs": 2400, "releaseMs": 500 }, "effectMs": 2000,
+      "steps": [
+        { "pose": "blade", "label": "Preparar el filo", "instruction": "Solo índice extendido; otros tres dedos flexionados. Mantén 0,7 s.", "holdMs": 700 },
+        { "pose": "slash-sweep", "label": "Trazar el corte", "instruction": "Desliza la punta del índice hacia un lado. Tienes 3 s; frena suavemente y mantén el gesto 0,5 s.", "holdMs": 500 }
+      ]
+    },
+    {
+      "key": "cleave", "id": "cleave-adapted", "name": "Sesgar", "title": "Sesgar: Cleave", "subtitle": "CORTES CRUZADOS",
+      "color": "#ffb1b5", "handCount": 2, "difficulty": "Intermedia", "tutorialGoal": 2,
+      "description": "Acerca ambas palmas visibles y divide al objetivo con una trama de cortes cruzados.",
+      "instructions": ["Abre ambas manos y comienza con las palmas separadas.", "Acércalas suavemente, sin contacto ni superposición.", "Mantén ambas abiertas a una altura parecida para completar Sesgar."],
+      "timing": { "holdMs": 850, "lostGraceMs": 250, "cooldownMs": 3400, "releaseMs": 600 }, "effectMs": 3000,
+      "steps": [
+        { "pose": "cleave-spread", "label": "Separar palmas", "instruction": "Abre ambas manos y sepáralas a una altura parecida.", "holdMs": 600 },
+        { "pose": "cleave-close", "label": "Cerrar la trama", "instruction": "Acerca las palmas abiertas, dejando espacio entre ellas y sin tocarlas.", "holdMs": 850 }
+      ]
+    },
+    {
+      "key": "flame", "id": "flame-adapted", "name": "Fuga", "title": "Fuga: flecha de fuego", "subtitle": "LLAMA Y PROYECCIÓN",
+      "color": "#ffd09c", "handCount": 2, "difficulty": "Avanzada", "tutorialGoal": 2,
+      "description": "Prepara la llama y libera una flecha que carboniza al objetivo y lo convierte en cenizas.",
+      "instructions": ["Abre ambas manos y mantenlas separadas a la misma altura.", "Cierra el puño cómodamente en una mano; extiende solo el índice en la otra.", "Mantén la separación y conserva ambos gestos para proyectar la flecha."],
+      "timing": { "holdMs": 900, "lostGraceMs": 250, "cooldownMs": 4600, "releaseMs": 600 }, "effectMs": 4200,
+      "steps": [
+        { "pose": "flame-charge", "label": "Preparar la llama", "instruction": "Abre ambas palmas y mantenlas separadas durante 0,8 s.", "holdMs": 800 },
+        { "pose": "flame-release", "label": "Liberar Fuga", "instruction": "Puño en una mano, solo índice extendido en la otra. Sin unirlas ni forzar la postura.", "holdMs": 900 }
+      ]
+    },
+    {
+      "key": "shrine", "id": "shrine-adapted", "name": "Santuario", "title": "Santuario Malevolente", "subtitle": "EXPANSIÓN DE DOMINIO",
+      "color": "#ffadad", "handCount": 2, "difficulty": "Avanzada", "tutorialGoal": 1,
+      "description": "Despliega el santuario y despedaza progresivamente a la maldición con oleadas de cortes.",
+      "instructions": ["En ambas manos extiende índice y corazón; flexiona anular y meñique.", "Acerca las palmas sin tocarlas ni superponerlas.", "Mantén los dos gestos y ambas manos visibles para expandir el santuario."],
+      "timing": { "holdMs": 1800, "lostGraceMs": 250, "cooldownMs": 8500, "releaseMs": 600 }, "effectMs": 8000,
+      "steps": [{ "pose": "shrine", "label": "Expandir el santuario", "instruction": "Dos dedos en ambas manos, palmas próximas sin contacto; mantén 1,8 s.", "holdMs": 1800 }]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+.artifacts/
+.sites-runtime/
+*.log
+.env
+.env.local
+public/mediapipe/
+public/models/
+dist/client/
+coverage/
+*.tsbuildinfo
